@@ -13,6 +13,7 @@ export default function TextC(props) {
     badge = false,
     badgeColor = '#55FF46',
     badgeText = 'Basic',
+    badgeTextColor = '#424242',
   } = props;
 
   let fontSize = size === 0 ? '' : {fontSize: size};
@@ -24,7 +25,12 @@ export default function TextC(props) {
         {text}
       </Text>
       {badge ? (
-        <Badge style={styles.badge} text={badgeText} color={badgeColor} />
+        <Badge
+          style={styles.badge}
+          text={badgeText}
+          color={badgeColor}
+          textColor={badgeTextColor}
+        />
       ) : null}
     </View>
   );
@@ -33,8 +39,9 @@ export default function TextC(props) {
 const styles = StyleSheet.create({
   textContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
   badge: {
-    alignItems: 'center',
+    alignSelf: 'center',
   },
 });

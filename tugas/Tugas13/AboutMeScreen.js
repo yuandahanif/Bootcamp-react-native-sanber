@@ -2,9 +2,9 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  ImageBackground,
   TouchableOpacity,
   Image,
+  FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import TabBar from './components/TabBar';
@@ -17,6 +17,16 @@ const dataSociall = [
   {iName: 'github', color: '#211F1F', account: '@yuandaHanif'},
   {iName: 'gitlab', color: '#FC6D27', account: '@yuandaHanif'},
   {iName: 'linkedin', color: '#006192', account: 'Yuanda Hanif Hisyam'},
+];
+const lanuageSkill = [
+  {name: 'HTML5', logoPath: './images/html5-original.png', percent: '85'},
+  {name: 'CSS3', logoPath: './images/css3-original.png', percent: '80'},
+  {
+    name: 'Javascript',
+    logoPath: './images/javascript-original.png',
+    percent: '75',
+  },
+  {name: 'PHP7', logoPath: './images/php-original.png', percent: '75'},
 ];
 
 export default function AbouteMeScreen() {
@@ -79,7 +89,56 @@ export default function AbouteMeScreen() {
         </View>
       </View>
       <View style={styles.profileSkill}>
-        <Text>skilled</Text>
+        <TouchableOpacity style={styles.editAkun} activeOpacity={0.8}>
+          <Icon name="settings" size={11} style={styles.settingIcon} />
+          <Text text="Edit akun" />
+        </TouchableOpacity>
+
+        <Text text="Bahasa Pemrograman" size={14} />
+        {/* <FlatList
+          data={lanuageSkill}
+          renderItem={data => (
+            <View style={styles.skillInfo}>
+              <ImageLogo file={require(data.item.logoPath)} size={28} />
+              <View style={styles.skillInfoDetail}>
+                <View style={styles.skillInfoTop}>
+                  <Text
+                    text={data.item.name}
+                    weight="Regular"
+                    badge={true}
+                    badgeText="Advanced"
+                    badgeColor="#E1306C"
+                    badgeTextColor="white"
+                  />
+                  <Text text="85%" weight="Regular" />
+                </View>
+                <View style={styles.skillInfoPercent}>
+                  <View style={styles.percent} />
+                </View>
+              </View>
+            </View>
+          )}
+          keyExtractor={data => data.name}
+        /> */}
+        <View style={styles.skillInfo}>
+          <ImageLogo file={require('./images/html5-original.png')} size={28} />
+          <View style={styles.skillInfoDetail}>
+            <View style={styles.skillInfoTop}>
+              <Text
+                text="HTML5"
+                weight="Regular"
+                badge={true}
+                badgeText="Advanced"
+                badgeColor="#E1306C"
+                badgeTextColor="white"
+              />
+              <Text text="85%" weight="Regular" />
+            </View>
+            <View style={styles.skillInfoPercent}>
+              <View style={styles.percent} />
+            </View>
+          </View>
+        </View>
       </View>
       <TabBar />
     </View>
@@ -121,8 +180,49 @@ const styles = StyleSheet.create({
     marginRight: 25,
     justifyContent: 'space-evenly',
   },
+  editAkun: {
+    height: 30,
+    borderRadius: 6,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 5,
+    backgroundColor: 'white',
+    borderColor: '#424242',
+    borderWidth: 1,
+    flexDirection: 'row',
+    marginBottom: 25,
+  },
+  settingIcon: {
+    marginHorizontal: 5,
+  },
   profileSkill: {
     flex: 10,
-    // backgroundColor: 'cyan',
+    marginHorizontal: 15,
+  },
+  skillInfo: {
+    marginTop: 10,
+    flexDirection: 'row',
+  },
+  skillInfoDetail: {
+    flex: 1,
+    marginLeft: 5,
+  },
+  skillInfoTop: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  skillInfoPercent: {
+    height: 5,
+    width: '100%',
+    backgroundColor: '#C4C4C4',
+    borderRadius: 4,
+    marginTop: 5,
+  },
+  percent: {
+    height: '100%',
+    width: '85%',
+    borderRadius: 4,
+    backgroundColor: '#83CD29',
   },
 });
