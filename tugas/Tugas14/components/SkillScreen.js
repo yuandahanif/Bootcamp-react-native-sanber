@@ -153,14 +153,19 @@ export default function SkillScreen() {
                     textColor="white"
                   />
                 </View>
-                <Text text="1 hari yang lalu" />
+
+                <Text
+                  style={styles.time}
+                  text="1 hari yang lalu"
+                  weight="Regular"
+                  size={8}
+                />
               </View>
               <TouchableOpacity style={styles.shareButton}>
                 <Icon name="share-2" size={24} color="#424242" />
               </TouchableOpacity>
             </View>
           </View>
-
         </View>
       </View>
       <TabBar />
@@ -203,17 +208,14 @@ const styles = StyleSheet.create({
   recomendProject: {
     flexDirection: 'row',
     marginTop: 10,
-    marginBottom: 16,
+    // marginBottom: 16,
   },
   recomendProjectDesc: {
     flex: 1,
   },
   projectTag: {
-    flex: 1,
-    height: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    backgroundColor: 'red',
   },
   tag: {
     marginTop: 5,
@@ -225,7 +227,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   post: {
-    flex: 1,
+    // flex: 1,
     marginTop: 15,
     paddingVertical: 10,
     borderRadius: 4,
@@ -262,5 +264,8 @@ const styles = StyleSheet.create({
   },
   shareButton: {
     marginLeft: 'auto',
+  },
+  time: {
+    marginLeft: 5,
   },
 });
