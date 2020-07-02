@@ -1,8 +1,15 @@
 import React from 'react';
-import {StyleSheet, View, ImageBackground, Image} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import Text from './Text';
 import TabBar from './TabBar';
 import Badge from './Badge';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default function SkillScreen() {
   return (
@@ -13,7 +20,7 @@ export default function SkillScreen() {
         <Text text="Selamat pagi," weight="reqular" size={24} color="white" />
         <Text text="Yuanda Hanif" size={36} color="white" lineBreak={1} />
       </ImageBackground>
-      <View style={styles.article}>
+      <View style={styles.articleContainer}>
         <View style={styles.recomendProjectContainer}>
           <Text
             text="Rekomendasi Project untuk mu"
@@ -32,11 +39,128 @@ export default function SkillScreen() {
                 size={14}
               />
               <View style={styles.projectTag}>
-                <Badge text="Javascript" color="#D5D90C" textColor="white" />
-                <Badge text="HTML" color="#FFC806" textColor="white" />
+                <Badge
+                  style={styles.tag}
+                  text="Javascript"
+                  color="#D5D90C"
+                  textColor="white"
+                />
+                <Badge
+                  style={styles.tag}
+                  text="HTML"
+                  color="#FFC806"
+                  textColor="white"
+                />
+                <Badge
+                  style={styles.tag}
+                  text="NodeJs"
+                  color="#03A500"
+                  textColor="white"
+                />
+                <Badge
+                  style={styles.tag}
+                  text="Chromium"
+                  color="#A8A8A8"
+                  textColor="white"
+                />
+                <Badge
+                  style={styles.tag}
+                  text="Desktop"
+                  color="#55FF46"
+                  textColor="white"
+                />
+                <Badge
+                  style={styles.tag}
+                  text="CSS"
+                  color="#4F9FFD"
+                  textColor="white"
+                />
+                <Badge
+                  style={styles.tag}
+                  text="Lainnya"
+                  color="#393939"
+                  textColor="white"
+                />
               </View>
             </View>
           </View>
+        </View>
+        <View style={styles.article}>
+          <Text text="Tongkrongan Programmer" size={24} />
+
+          <View style={styles.post}>
+            <View style={styles.author}>
+              <Image
+                style={styles.avatar}
+                source={require('../images/Arkgnits-main.jpg')}
+              />
+              <Text text="Tongkrongan.programmer" size={14} />
+              <TouchableOpacity style={styles.moreIcon}>
+                <Icon name="more-horizontal" size={20} color="#424242" />
+              </TouchableOpacity>
+            </View>
+            <Image
+              style={styles.postImage}
+              source={require('../images/project-photo.png')}
+            />
+            <View style={styles.postDescription}>
+              <View style={styles.leftDescription}>
+                <Text
+                  text="website pemantauan data COVID-19 & web portofolio"
+                  size={16}
+                />
+                <View style={styles.projectTag}>
+                  <Badge
+                    style={styles.tag}
+                    text="Javascript"
+                    color="#D5D90C"
+                    textColor="white"
+                  />
+                  <Badge
+                    style={styles.tag}
+                    text="HTML"
+                    color="#FFC806"
+                    textColor="white"
+                  />
+                  <Badge
+                    style={styles.tag}
+                    text="NodeJs"
+                    color="#03A500"
+                    textColor="white"
+                  />
+                  <Badge
+                    style={styles.tag}
+                    text="Chromium"
+                    color="#A8A8A8"
+                    textColor="white"
+                  />
+                  <Badge
+                    style={styles.tag}
+                    text="Desktop"
+                    color="#55FF46"
+                    textColor="white"
+                  />
+                  <Badge
+                    style={styles.tag}
+                    text="CSS"
+                    color="#4F9FFD"
+                    textColor="white"
+                  />
+                  <Badge
+                    style={styles.tag}
+                    text="Lainnya"
+                    color="#393939"
+                    textColor="white"
+                  />
+                </View>
+                <Text text="1 hari yang lalu" />
+              </View>
+              <TouchableOpacity style={styles.shareButton}>
+                <Icon name="share-2" size={24} color="#424242" />
+              </TouchableOpacity>
+            </View>
+          </View>
+
         </View>
       </View>
       <TabBar />
@@ -55,12 +179,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     justifyContent: 'center',
   },
-  article: {
+  articleContainer: {
     flex: 11,
     alignItems: 'center',
   },
   recomendProjectContainer: {
-    transform: [{translateY: -40}],
+    marginTop: -40,
     marginHorizontal: 'auto',
     width: '80%',
     backgroundColor: 'white',
@@ -78,9 +202,65 @@ const styles = StyleSheet.create({
   },
   recomendProject: {
     flexDirection: 'row',
-    marginTop: 15,
+    marginTop: 10,
+    marginBottom: 16,
+  },
+  recomendProjectDesc: {
+    flex: 1,
   },
   projectTag: {
+    flex: 1,
+    height: '100%',
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    backgroundColor: 'red',
+  },
+  tag: {
+    marginTop: 5,
+  },
+  article: {
+    flex: 1,
+    width: '100%',
+    paddingHorizontal: 30,
+    marginTop: 15,
+  },
+  post: {
+    flex: 1,
+    marginTop: 15,
+    paddingVertical: 10,
+    borderRadius: 4,
+    borderColor: '#898989',
+    borderWidth: 0.5,
+  },
+  author: {
+    flexDirection: 'row',
+    marginBottom: 15,
+  },
+  avatar: {
+    height: 40,
+    width: 40,
+    borderRadius: 50,
+    overflow: 'hidden',
+    marginHorizontal: 15,
+    marginRight: 10,
+  },
+  moreIcon: {
+    alignSelf: 'center',
+    marginLeft: 'auto',
+    marginRight: 15,
+  },
+  postImage: {
+    width: '100%',
+    resizeMode: 'contain',
+  },
+  postDescription: {
+    flexDirection: 'row',
+    padding: 15,
+  },
+  leftDescription: {
+    width: '90%',
+  },
+  shareButton: {
+    marginLeft: 'auto',
   },
 });
