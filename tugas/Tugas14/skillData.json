@@ -8,7 +8,7 @@
       "logoUrl": "",
       "iconType": "MaterialCommunityIcons",
       "iconName": "react",
-      "percentageProgress": "50%"
+      "percentageProgress": 50
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "logoUrl": "",
       "iconType": "MaterialCommunityIcons",
       "iconName": "laravel",
-      "percentageProgress": "100%"
+      "percentageProgress": 100
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "logoUrl": "",
       "iconType": "MaterialCommunityIcons",
       "iconName": "language-javascript",
-      "percentageProgress": "30%"
+      "percentageProgress": 30
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "logoUrl": "",
       "iconType": "MaterialCommunityIcons",
       "iconName": "language-python",
-      "percentageProgress": "70%"
+      "percentageProgress": 70
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "logoUrl": "",
       "iconType": "MaterialCommunityIcons",
       "iconName": "git",
-      "percentageProgress": "75%"
+      "percentageProgress": 75
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "logoUrl": "",
       "iconType": "MaterialCommunityIcons",
       "iconName": "gitlab",
-      "percentageProgress": "60%"
+      "percentageProgress": 60
     }
   ]
 }
