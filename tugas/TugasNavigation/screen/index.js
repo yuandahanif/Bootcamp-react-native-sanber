@@ -10,5 +10,5 @@ export {
   LoginScreen,
   ProjectScreen,
   SkillScreen,
-  SearchScreen
+  SearchScreen,
 };
