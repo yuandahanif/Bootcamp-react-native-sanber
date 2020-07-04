@@ -1,10 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image, FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import SkillTagList from './SkillTagList';
 
-export default function ProjectPostList() {
+export default function ProjectPostList(props) {
+    const {psotImage, profileImage, } = props
   return (
     <View>
       <View style={styles.post}>
