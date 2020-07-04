@@ -7,9 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Text from '../components/Text';
-import TabBar from '../components/TabBar';
-import Badge from '../components/Badge';
 import Icon from 'react-native-vector-icons/Feather';
+import SkillTagList from '../components/SkillTagList';
 
 export default function SkillScreen() {
   return (
@@ -38,50 +37,16 @@ export default function SkillScreen() {
                 weight="Regular"
                 size={14}
               />
-              <View style={styles.projectTag}>
-                <Badge
-                  style={styles.tag}
-                  text="Javascript"
-                  color="#D5D90C"
-                  textColor="white"
-                />
-                <Badge
-                  style={styles.tag}
-                  text="HTML"
-                  color="#FFC806"
-                  textColor="white"
-                />
-                <Badge
-                  style={styles.tag}
-                  text="NodeJs"
-                  color="#03A500"
-                  textColor="white"
-                />
-                <Badge
-                  style={styles.tag}
-                  text="Chromium"
-                  color="#A8A8A8"
-                  textColor="white"
-                />
-                <Badge
-                  style={styles.tag}
-                  text="Desktop"
-                  color="#55FF46"
-                  textColor="white"
-                />
-                <Badge
-                  style={styles.tag}
-                  text="CSS"
-                  color="#4F9FFD"
-                  textColor="white"
-                />
-                <Badge
-                  style={styles.tag}
-                  text="Lainnya"
-                  color="#393939"
-                  textColor="white"
-                />
-              </View>
+              <SkillTagList
+                tagList={[
+                  'Javascript',
+                  'HTML',
+                  'NodeJs',
+                  'Chromium',
+                  'Desktop',
+                  'CSS',
+                ]}
+              />
             </View>
           </View>
         </View>
@@ -109,50 +74,16 @@ export default function SkillScreen() {
                   text="website pemantauan data COVID-19 & web portofolio"
                   size={16}
                 />
-                <View style={styles.projectTag}>
-                  <Badge
-                    style={styles.tag}
-                    text="Javascript"
-                    color="#D5D90C"
-                    textColor="white"
-                  />
-                  <Badge
-                    style={styles.tag}
-                    text="HTML"
-                    color="#FFC806"
-                    textColor="white"
-                  />
-                  <Badge
-                    style={styles.tag}
-                    text="NodeJs"
-                    color="#03A500"
-                    textColor="white"
-                  />
-                  <Badge
-                    style={styles.tag}
-                    text="Chromium"
-                    color="#A8A8A8"
-                    textColor="white"
-                  />
-                  <Badge
-                    style={styles.tag}
-                    text="Desktop"
-                    color="#55FF46"
-                    textColor="white"
-                  />
-                  <Badge
-                    style={styles.tag}
-                    text="CSS"
-                    color="#4F9FFD"
-                    textColor="white"
-                  />
-                  <Badge
-                    style={styles.tag}
-                    text="Lainnya"
-                    color="#393939"
-                    textColor="white"
-                  />
-                </View>
+                <SkillTagList
+                  tagList={[
+                    'Javascript',
+                    'HTML',
+                    'NodeJs',
+                    'Chromium',
+                    'Desktop',
+                    'CSS',
+                  ]}
+                />
 
                 <Text
                   style={styles.time}
@@ -166,9 +97,9 @@ export default function SkillScreen() {
               </TouchableOpacity>
             </View>
           </View>
+          
         </View>
       </View>
-      {/* <TabBar /> */}
     </View>
   );
 }
@@ -212,13 +143,6 @@ const styles = StyleSheet.create({
   },
   recomendProjectDesc: {
     flex: 1,
-  },
-  projectTag: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  tag: {
-    marginTop: 5,
   },
   article: {
     flex: 1,
