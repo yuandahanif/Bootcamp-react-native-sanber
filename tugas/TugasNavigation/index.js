@@ -18,41 +18,41 @@ import {AuthContext} from './context';
 // * screen
 const SkillStack = createStackNavigator();
 const SkillStackScreen = () => (
-  <SkillStack.Navigator>
+  <SkillStack.Navigator headerMode="none">
     <SkillStack.Screen name="Home" component={SkillScreen} />
   </SkillStack.Navigator>
 );
 
 const AboutMeStack = createStackNavigator();
 const AboutMeStackScreen = () => (
-  <AboutMeStack.Navigator>
+  <AboutMeStack.Navigator headerMode="none">
     <AboutMeStack.Screen name="AbouteMe" component={AbouteMeScreen} />
   </AboutMeStack.Navigator>
 );
 
 const AddProjectStack = createStackNavigator();
 const AddProjectStackScreen = () => (
-  <AddProjectStack.Navigator>
+  <AddProjectStack.Navigator headerMode="none">
     <AddProjectStack.Screen name="Add" component={AddProjectScreen} />
   </AddProjectStack.Navigator>
 );
 
 const LoginStack = createStackNavigator();
 const LoginStackScreen = () => (
-  <LoginStack.Navigator>
+  <LoginStack.Navigator headerMode="none">
     <LoginStack.Screen name="Login" component={LoginScreen} />
   </LoginStack.Navigator>
 );
 
 const ProjectStack = createStackNavigator();
 const ProjectStackScreen = () => (
-  <ProjectStack.Navigator>
+  <ProjectStack.Navigator headerMode="none">
     <ProjectStack.Screen name="Project" component={ProjectScreen} />
   </ProjectStack.Navigator>
 );
 const SearchStack = createStackNavigator();
 const SearchStackScreen = () => (
-  <SearchStack.Navigator>
+  <SearchStack.Navigator headerMode="none">
     <SearchStack.Screen name="Search" component={SearchScreen} />
   </SearchStack.Navigator>
 );
@@ -116,19 +116,7 @@ export default function index() {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        {authToken ? (
-          <DrawerStack.Navigator>
-            <DrawerStack.Screen name="Home" component={TabsScreen} />
-            <DrawerStack.Screen
-              name="AbouteMe"
-              component={AboutMeStackScreen}
-            />
-          </DrawerStack.Navigator>
-        ) : (
-          <LoginStack.Navigator>
-            <LoginStack.Screen name="Login" component={LoginScreen} />
-          </LoginStack.Navigator>
-        )}
+        {authToken ? <DrawerScreen /> : <LoginStackScreen />}
       </NavigationContainer>
     </AuthContext.Provider>
   );
