@@ -1,62 +1,73 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  FlatList,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 import SkillTagList from './SkillTagList';
 
 export default function ProjectPostList(props) {
-    const {psotImage, profileImage, } = props
+  const {data} = props;
   return (
-    <View>
-      <View style={styles.post}>
-        <View style={styles.author}>
-          <Image
-            style={styles.avatar}
-            source={require('../images/Arkgnits-main.jpg')}
-          />
-          <Text text="Tongkrongan.programmer" size={14} />
-          <TouchableOpacity style={styles.moreIcon}>
-            <Icon name="more-horizontal" size={20} color="#424242" />
-          </TouchableOpacity>
-        </View>
-        <Image
-          style={styles.postImage}
-          source={require('../images/project-photo.png')}
-        />
-        <View style={styles.postDescription}>
-          <View style={styles.leftDescription}>
-            <Text
-              text="website pemantauan data COVID-19 & web portofolio"
-              size={16}
+    <FlatList
+      data={data}
+      keyExtractor={data => data.id}
+      renderItem={
+        <View style={styles.post}>
+          <View style={styles.author}>
+            <Image
+              style={styles.avatar}
+              source={require('../images/Arkgnits-main.jpg')}
             />
-            <SkillTagList
-              tagList={[
-                'Javascript',
-                'HTML',
-                'NodeJs',
-                'Chromium',
-                'Desktop',
-                'CSS',
-                'CSS',
-                'CSS',
-                'CSS',
-              ]}
-              itemLimit={10}
-            />
-
-            <Text
-              style={styles.time}
-              text="1 hari yang lalu"
-              weight="Regular"
-              size={8}
-            />
+            <Text text="Tongkrongan.programmer" size={14} />
+            <TouchableOpacity style={styles.moreIcon}>
+              <Icon name="more-horizontal" size={20} color="#424242" />
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.shareButton}>
-            <Icon name="share-2" size={24} color="#424242" />
-          </TouchableOpacity>
+          <Image
+            style={styles.postImage}
+            source={require('../images/project-photo.png')}
+          />
+          <View style={styles.postDescription}>
+            <View style={styles.leftDescription}>
+              <Text
+                text="website pemantauan data COVID-19 & web portofolio"
+                size={16}
+              />
+              <SkillTagList
+                tagList={[
+                  'Javascript',
+                  'HTML',
+                  'NodeJs',
+                  'Chromium',
+                  'Desktop',
+                  'CSS',
+                  'CSS',
+                  'CSS',
+                  'CSS',
+                ]}
+                itemLimit={10}
+              />
+
+              <Text
+                style={styles.time}
+                text="1 hari yang lalu"
+                weight="Regular"
+                size={8}
+              />
+            </View>
+            <TouchableOpacity style={styles.shareButton}>
+              <Icon name="share-2" size={24} color="#424242" />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </View>
+      }
+    />
   );
 }
 

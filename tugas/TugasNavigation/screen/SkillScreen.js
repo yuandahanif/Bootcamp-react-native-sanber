@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Text from '../components/Text';
 import Icon from 'react-native-vector-icons/Feather';
+import ProjectPostList from '../components/ProjectPostList';
 import SkillTagList from '../components/SkillTagList';
 
 export default function SkillScreen() {
